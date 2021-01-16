@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.exceptions.InsufficientFundsException;
+
 public class Destination {
 
     private String name;
@@ -14,8 +16,12 @@ public class Destination {
         this.requireCovidTest = requireCovidTest;
     }
 
-    public void allowToVisit(Traveler traveler) {
-
+    public void allowToVisit(Traveler traveler) throws InsufficientFundsException {
+        Double costToTravel = distance * costPerMile;
+        Double moneyTravelerHas = traveler.getMoney();
+        if (moneyTravelerHas < costToTravel) {
+            throw new InsufficientFundsException();
+        }
     }
 
     public String getName() {
