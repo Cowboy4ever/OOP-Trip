@@ -1,6 +1,5 @@
 package org.example;
 
-import javax.print.attribute.standard.Destination;
 import java.util.List;
 
 public class Traveler {
@@ -23,7 +22,6 @@ public class Traveler {
     }
 
     public void bookATrip(Destination destination) {
-
     }
 
     public String getName() {
